@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style>
+        table th, table td {
+            padding: 15px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>Cars:</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Horsepower</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.brandName}"/>
+            <td th:text="${car.model}"/>
+            <td th:text="${car.power}"/>
+        </tr>
+    </tbody>
+</table>
+<br/><br/><br/>
+<div>
+<a href="/cars">/cars</a> ... count = <a href="/cars?count=1">1</a> ..
+<a href="/cars?count=2">2</a> ..
+<a href="/cars?count=3">3</a> ..
+<a href="/cars?count=4">4</a> ..
+<a href="/cars?count=5">5</a>
+</div>
+</body>
+</html>
